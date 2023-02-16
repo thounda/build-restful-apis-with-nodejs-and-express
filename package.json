@@ -1,0 +1,25 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "Building RESTful APIs with NodeJS and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thounda/build-restful-apis-with-nodejs-and-express.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "restful-api"
+  ],
+  "author": "Thounda Craig Jr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thounda/build-restful-apis-with-nodejs-and-express/issues"
+  },
+  "homepage": "https://github.com/thounda/build-restful-apis-with-nodejs-and-express#readme"
+}
