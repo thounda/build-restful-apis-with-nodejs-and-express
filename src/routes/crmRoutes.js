@@ -1,0 +1,3 @@
+/*
+This file handles all endpoints for the app
+*/
