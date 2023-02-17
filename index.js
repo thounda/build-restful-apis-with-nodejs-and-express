@@ -1,10 +1,25 @@
 // Import modules into s"cript
 import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
 import routes from "./src/routes/crmRoutes";
 
 // Define const / variables to invoke functions in script
 const app = express();
 const PORT = 3000;
+
+// Mongoose connection
+mongoose.Promise = global.Promise;
+mongoose.set("strictQuery", false);
+mongoose.connect("mongodb://localhost/CRMdb", {
+  useNewUrlParser: true,
+});
+
+// bodyparser setup for communication between db and the Express server
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Pass the server app 'routes'
 
 // Pass the app into the 'routes' module
 routes(app);
