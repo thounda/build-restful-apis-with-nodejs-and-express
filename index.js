@@ -1,9 +1,13 @@
-// Import modules into script
+// Import modules into s"cript
 import express from "express";
+import routes from "./src/routes/crmRoutes";
 
-// Define const / variables to invoke in script
+// Define const / variables to invoke functions in script
 const app = express();
 const PORT = 3000;
+
+// Pass the app into the 'routes' module
+routes(app);
 
 // Define end points
 app.get("/", (req, res) => {
