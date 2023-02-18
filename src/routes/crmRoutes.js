@@ -2,6 +2,9 @@
 This file handles all endpoints for the app
 */
 
+// import from modules
+import { addNewContact } from "../controllers/crmController";
+
 // Create functions for GET POST PUT DELETE
 const routes = (app) => {
   app
@@ -17,8 +20,7 @@ const routes = (app) => {
         res.send("GET request successful");
       }
     )
-
-    .post((req, res) => res.send("POST request successfull"));
+    .post(addNewContact);
 
   app
     .route("/contact/:contactID")
