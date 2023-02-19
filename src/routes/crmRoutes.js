@@ -3,10 +3,15 @@ This file handles all endpoints for the app
 */
 
 // import from modules
-import { addNewContact, getContacts } from "../controllers/crmController";
+import {
+  addNewContact,
+  getContacts,
+  getContactWithID,
+} from "../controllers/crmController";
 
 // Create functions for GET POST PUT DELETE
 const routes = (app) => {
+  // GET all contact
   app
     .route("/contact")
     .get((req, res, next) => {
@@ -16,10 +21,14 @@ const routes = (app) => {
       next();
     }, getContacts)
 
+    // POST a new contact
     .post(addNewContact);
 
   app
-    .route("/contact/:contactID")
+    .route("/contact/:contactId")
+    // GET a specific contact
+    .get(getContactWithID)
+
     .put((req, res) => res.send("PUT request successful!"))
 
     .delete((req, res) => res.send("DELETE request successful!"));

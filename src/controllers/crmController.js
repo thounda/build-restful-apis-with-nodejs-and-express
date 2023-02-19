@@ -16,9 +16,19 @@ export const addNewContact = (req, res) => {
   });
 };
 
-// Controller to find (GET) contacts
+// Controller to find (GET) all contacts
 export const getContacts = (req, res) => {
   Contact.find({}, (err, contact) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(contact);
+  });
+};
+
+// Controller to find (one) specific contact from db
+export const getContactWithID = (req, res) => {
+  Contact.findById(req.params.contactId, (err, contact) => {
     if (err) {
       res.send(err);
     }
