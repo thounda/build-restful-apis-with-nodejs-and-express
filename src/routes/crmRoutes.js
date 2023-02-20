@@ -8,6 +8,7 @@ import {
   getContacts,
   getContactWithID,
   updateContact,
+  deleteContact,
 } from "../controllers/crmController";
 
 // Create functions for GET POST PUT DELETE
@@ -31,10 +32,11 @@ const routes = (app) => {
     // GET a specific contact
     .get(getContactWithID)
 
-    // Update a contact
+    // Update a contact from db
     .put(updateContact)
 
-    .delete((req, res) => res.send("DELETE request successful!"));
+    // Delete a contact from db
+    .delete(deleteContact);
 };
 
 // Set Module export name
