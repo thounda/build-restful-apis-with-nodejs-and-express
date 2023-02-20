@@ -19,7 +19,8 @@ mongoose.connect("mongodb://localhost/CRMdb", {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Pass the server app 'routes'
+// Server static files
+app.use(express.static("public"));
 
 // Pass the app into the 'routes' module
 routes(app);
