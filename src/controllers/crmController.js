@@ -50,3 +50,13 @@ export const updateContact = (req, res) => {
     }
   );
 };
+
+// Controller to Delete a contact in the db
+export const deleteContact = (req, res) => {
+  Contact.remove({ _id: req.params.contactId }, (err) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json({ message: `Successfully delete contact` });
+  });
+};
