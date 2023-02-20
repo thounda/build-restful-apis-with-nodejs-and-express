@@ -2,7 +2,6 @@
 This file defines the schema models for the databases
 */
 import mongoose from "mongoose";
-import mongooses from "mongoose";
 
 // Set var to accept the mongoose schema
 const Schema = mongoose.Schema;

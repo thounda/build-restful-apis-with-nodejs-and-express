@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 import { ContactSchema } from "../models/crmModel";
 
-// Create var to hold the modelController in Add a new contact to mongodb
+// Create var to hold the modelController an Add a new contact to mongodb
 const Contact = mongoose.model("Contact", ContactSchema);
 
 export const addNewContact = (req, res) => {
@@ -34,4 +34,19 @@ export const getContactWithID = (req, res) => {
     }
     res.json(contact);
   });
+};
+
+//Controller to update a specific contact in the db
+export const updateContact = (req, res) => {
+  Contact.findByIdAndUpdate(
+    { _id: req.params.contactId },
+    req.body,
+    { new: true },
+    (err, contact) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(contact);
+    }
+  );
 };
